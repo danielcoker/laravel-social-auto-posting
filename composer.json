@@ -1,5 +1,5 @@
 {
-    "name": "toolkito/larasap",
+    "name": "danielcoker/larasap",
     "description": "Laravel social auto posting (Larasap) lets you automatically post all your content to social networks such as Telegram Channel and Twitter.",
     "license": "MIT",
     "keywords": [
@@ -14,6 +14,12 @@
             "name": "Ali Hesari",
             "email": "alihesari.com@gmail.com",
             "homepage": "https://alihesari.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Daniel Coker",
+            "email": "danielcoker23@gmail.com",
+            "homepagee": "dancoker.com",
             "role": "Developer"
         }
     ],
