@@ -35,6 +35,13 @@ class Api
      */
     private static $page_access_token;
 
+    /**
+     * Page ID
+     *
+     * @var string
+     */
+    private static $page_id;
+
     private static $fb;
 
     public static function initialize()
@@ -43,6 +50,7 @@ class Api
         self::$app_secret = Config::get('larasap.facebook.app_secret');
         self::$default_graph_version = Config::get('larasap.facebook.default_graph_version');
         self::$page_access_token = Config::get('larasap.facebook.page_access_token');
+        self::$page_id = Config::get('larasap.facebook.page_id');
 
         self::$fb = new \Facebook\Facebook([
             'app_id' => self::$app_id,
@@ -64,7 +72,7 @@ class Api
         self::initialize();
         $data = compact('link', 'message');
         try {
-            $response = self::$fb->post('/me/feed', $data, self::$page_access_token);
+            $response = self::$fb->post('/' . self::$page_id . '/feed', $data, self::$page_access_token);
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
             throw new \Exception('Graph returned an error: '.$e->getMessage());
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
